@@ -23,7 +23,10 @@ jobs:
     - name: Install Flutter
       uses: subosito/flutter-action@v2
       with:
-        flutter-version: 'stable'
+        channel: stable
+        flutter-version: '3.10.6'
+        cache: true
+    # Con esto evitamos el error "Unable to determine Flutter version..." al no poder resolver solo 'stable' :contentReference[oaicite:0]{index=0}
 
     - name: Get dependencies
       run: flutter pub get
@@ -36,3 +39,4 @@ jobs:
       with:
         name: BoliApp-APK
         path: build/app/outputs/flutter-apk/app-release.apk
+    # Ya actualizado a v4 para no chocar con el brown‑out de la v3 :contentReference[oaicite:1]{index=1}
